@@ -1,0 +1,173 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: palevioletred;
+
+}
+h3{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: large;
+}
+.birthdaycard{
+    position: relative;
+    width: 250px;
+    height: 350px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 1s;
+}
+.birthdaycard:hover{
+    transform: perspective(2500px) rotate(5deg);
+    box-shadow: inset 100px 20px 100px  rgba(0,0,0,0.2),
+    0 10px 100px rgb(0, 0, 0,0.5);
+}
+.birthdaycard:hover .cardfront{
+    transform: rotateY(-160deg);
+}
+.birthdaycard:hover .happy{
+    visibility: hidden;
+}
+.cardfront{
+    position: relative;
+    background-color: skyblue;
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
+    30px 0 50px rgb(0, 0, 0, 0.4);
+    transition: 0.6s;
+}
+.happy{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin: 30px;
+    background-image: linear-gradient(120deg,yellow 0%,red 100%);
+    transition: 0.1s;
+}
+
+.balloons{
+    position: absolute;
+}
+.balloon1,
+.balloon2,
+.balloon3,
+.balloon4{
+    position: absolute;
+    width: 85px;
+    height: 95px;
+    border-radius: 50%;
+}
+.balloon1{
+    background-color: #FFF000;
+    left: -10px;
+    top: 50px;
+}
+
+.balloon2{
+    background-color:#53BDA5;
+    left: 50px;
+    top: 20px;
+}
+
+.balloon3{
+    background-color: #EBB8DD;
+    left: 110px;
+    top: 50px;
+}
+
+.balloon4{
+    background-color: #BF2C35;
+    left: 170px;
+    top: 50px;
+}
+
+.balloon1::before,
+.balloon2::before,
+.balloon3::before,
+.balloon4::before{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 155px;
+    background-color: yellow;
+    top: 95px;
+    left: 43px;
+}
+
+.balloon1::after,
+.balloon2::after,
+.balloon3::after,
+.balloon4::after{
+    content: "";
+    position: absolute;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    top: 94px;
+    left: 37px;
+}
+
+.balloon1::after{
+    border-bottom: 10px solid red;
+}
+.balloon2::after{
+    border-bottom: 10px solid aqua;
+}
+.balloon3::after{
+    border-bottom: 10px solid orange;
+}
+.balloon4::after{
+    border-bottom: 10px solid yellowgreen;
+}
+.cardinside{
+    position: absolute;
+    background-color: skyblue;
+    width: 250px;
+    height: 350px;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+
+}
+.text{
+    font-size: x-small;
+}
+
+p{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 40px;
+    color: brown;
+}
+.name{
+    position: absolute;
+    left: 150px;
+    top: 200px;
+    color: wheat;
+}
+
+.back{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: wheat;
+    text-align: center;
+    margin:30px ;
+    outline-color: antiquewhite;
+}
+
+
+/* Ensure the photo grid container is responsive */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 10px; /* Space between photos */
+}
+
+.photo-item img {
+    width: 70px;
+    height: auto;
+    display: block;
+}
+
